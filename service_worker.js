@@ -1,22 +1,24 @@
-/*
-Noch zu ergänzen/Probleme: 
-- Dynamischer Cache wächstimmer weiter 
-    =>Weg um veraltete Seiten aus dem Cache zu löschen
-- Einzelen Seiten zu updaten
-    => Um Den Traffic zu schonen
-*/
-
 //Hier stehen all seiten die gecached werden sollen
 const staticAssets = [
     './',
+    './bilder/images_footer/back.png',
+    './bilder/images_footer/home.png',
+    './bilder/images_footer/location.png',
+    './bilder/images_header/profile.png',
     './reg.js',
     './stylesheet_standard.css',
-    './stylesheet_all.css',
+    './stylesheet_index.css',
+    './stylesheet_location.css',
+    './stylesheet_login.css',
+    './stylesheet_regestration.css',
+    './stylesheet_training_1_selection.css',
+    './stylesheet_training.css',
     './index.html',
     './location.html',
     './notavaiable.html',
-    './Mode1_selection.html',
-    './Stage1.html'
+    './training_1_selection.html',
+    './Stage1.html',
+    './training.html'
 ];
 
 //Eventlistener für das "install" Event

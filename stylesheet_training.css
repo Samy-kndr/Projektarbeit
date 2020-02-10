@@ -1,15 +1,12 @@
-#main_content {
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 .main_main_content_buttons {
     background-color: white;
     border: 0px;
     height: 400px;
     width: 400px;
     border-radius: 40px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 .a_margin {
     margin: 5%;

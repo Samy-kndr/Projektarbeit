@@ -4,14 +4,14 @@
 		<title>Home</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="stylesheet_index.css" media="screen" type="text/css">
+        <!--***Funktioniert noch nicht<link rel="stylesheet" href="stylesheet_index.css" media="screen" type="text/css">-->
+        <!--Manifest file für die Installation-->
         <link rel="manifest" href="manifest.json">
         <!--Registrierungsscript des Service-Workers-->
         <script src="reg.js"></script>
         <style type="text/css" media="screen">
-            #main_content {
-                background-color: rgba(110, 110, 110, 0.58);
-            }
+            
         </style>
 	</head>
 	<body>
@@ -21,23 +21,40 @@
                 <h1 id="Ub_site">Home</h1>
             </div>
             <div id="header_picture">
-                <a href="registration.html" class="footer_a"><img src=".\bilder\images_header\profile.png" style="height: 80%; width: 80%;"></a>
+                <a href="registration.html" class="footer_a"><img src=".\bilder\images_header\profile.png" style= "height: 80%; width: 80%;"></a>
             </div>
         </header>
         <main>
-            <div id="main_leftside">
-
-            </div>
             <div id="main_content">
-                <a class="a_margin" href="Mode1_selection.html"><button class="main_main_content_buttons">Lauf - Training</button></a>
-                <a class="a_margin" href="notavaiable.html"><button class="main_main_content_buttons">Modus 2</button></a>
-                <a class="a_margin" href="notavaiable.html"><button class="main_main_content_buttons">Modus 3</button></a>
-                <a class="a_margin" href="notavaiable.html"><button class="main_main_content_buttons">Modus 4</button></a>
-                <a class="a_margin" href="notavaiable.html"><button class="main_main_content_buttons">Modus 5</button></a>
-                <a class="a_margin" href="notavaiable.html"><button class="main_main_content_buttons">Modus 6</button></a>
-            </div>
-            <div id="main_rightside">
-
+                <div id="main_content_top">
+                    <div id="main_content_top_text">
+                        <h1 id="main_content_top_text_h1">Letztes Training</h1>
+                    </div>
+                </div>
+                <div id="main_content_left">
+                    <a id="main_content_left_1_link" href="training.html">
+                        <div id="main_content_left_1">
+                            <div id="main_content_left_1_text">
+                                <h1 id="main_content_left_1_text_h1">Training</h1>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="main_content_left_2">
+                        <div id="main_content_left_2_text">
+                            <h1 id="main_content_left_2_text_h1">Anderes Training</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="main_content_right">
+                    <div id="main_content_right_text">
+                        <h1 id="main_content_right_text_h1">Tagesziel</h1>
+                    </div>
+                </div>
+                <div id="main_content_middle">
+                    <div id="main_content_middle_text">
+                        <h1 id="main_content_middle_text_h1">Noch keine Idee</h1>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>

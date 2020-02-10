@@ -17,18 +17,22 @@ body {
 header {
     width: 100vw;
     height: 140px;
+    position: fixed;
     border-bottom: 2px solid black;
     box-shadow: 2px 2px 20px 3px rgba(0,0,0,0.8);
+    background-color: white;
 }
 main {
     width: 100vw;
     height: calc(100vh - 140px - 170px - 2px - 2px);
     display: flex;
+    padding-top: 142px;
 }
 footer {
     width: 100vw;
     height: 170px;
     display: flex;
+    position: fixed;
     justify-content: space-around;
     align-items: center;
     border-top: 2px solid black;
@@ -63,6 +67,10 @@ footer {
 #main_content {
     width: 82%;
     height: calc(100vh - 140px - 170px - 2px - 2px);
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #footer_location {
     width: 125px;
