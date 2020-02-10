@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <style type="text/css" media="screen">
+            #main_content {
+                width: 100%;
+                height: 100%;
+            }
+            .main_content_stage {
+                width: 100%;
+                height: 18.5%;
+                font-size: 2.5rem;
+                background-color: rgb(255, 255, 255, 0);
+                border-top: 2px solid rgb(0, 0, 0, 0.8);
+            }
+            .main_content_stage:hover {
+                box-shadow: 0px 5px 20px 20px rgb(74, 79, 88);
+            }
+            #main_content_stage_last {
+                width: 100%;
+                height: 18.5%;
+                font-size: 2.5rem;
+                background-color: rgb(255, 255, 255, 0);
+                border-top: 2px solid rgb(0, 0, 0, 0.8);
+            }
+            #main_content_stage_last:hover {
+                box-shadow: 0px -10px 20px 5px rgba(75,79,88,1);
+            }
+            #main_content_header {
+                width: 100%;
+                height: calc(100% - 18.5% - 18.5% - 18.5% - 18.5% - 18.5% - 10px);
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+            #main_content_header_ub {
+                font-weight: 500;
+                font-size: 3rem;
+                padding-left: 7rem;
+            }
+            .main_content_stage_text {
+                width: 70%;
+                height: 90%;
+                float: left;
+                padding-top: 2.5%;
+            }
+            .main_content_stage_icon {
+                width: 30%;
+                height: 100%;
+                float: right;
+                display: flex;
+                align-items: center;
+            }
+            .main_content_stage_icon_circle {
+                font-weight: 900;
+                font-size: 4rem;
+                text-decoration: none;
+                color: black;
+                border: 2px solid black;
+                border-radius: 400px;
+                padding-left: 100px;
+                padding-right: 100px;
+                padding-top: 75px;
+                padding-bottom: 75px;
+            }
+            .main_content_stage_text_first {
+                padding-left: 5%;
+                font-weight: 900;
+            }
+            .main_content_stage_text_second {
+                padding-left: 5%;
+                margin-top: 1%;
+                margin-bottom: 0;
+            }
+        </style>
+	</head>
+	<body>
+        <header>
+            <div id="header_name">
+                <h3 id="Ub_username">Username</h3>
+                <h1 id="Ub_site">Home</h1>
+            </div>
+            <div id="header_picture">
+                <img src=".\bilder\images_header\profile.png" style="height: 80%; width: 80%;">
+            </div>
+        </header>
+        <main>
+            <div id="main_content">
+                <div id="main_content_header">
+                    <a id="main_content_header_ub">Schwierigkeiten</a>
+                </div>
+                <div class="main_content_stage">
+                    <div class="main_content_stage_text">
+                        <a class="main_content_stage_text_first">Stufe 1</a>
+                        <p class="main_content_stage_text_second">In Stufe 1 musst du ungef&auml;hr 1 Kilometer laufen um zum Ziel zu gelangen</p>
+                    </div>
+                    <div class="main_content_stage_icon">
+                        <a class="main_content_stage_icon_circle" href="Stage1.html" style="background-color: #77E270;">1</a>
+                    </div>
+                </div>
+                <div class="main_content_stage">
+                    <div class="main_content_stage_text">
+                        <a class="main_content_stage_text_first">Stufe 2</a>
+                        <p class="main_content_stage_text_second">In Stufe 2 musst du ungef&auml;hr 3 Kilometer laufen um zum Ziel zu gelangen.</p>
+                    </div>
+                    <div class="main_content_stage_icon">
+                        <a class="main_content_stage_icon_circle" href="" style="background-color: #C8E353;">2</a>
+                    </div>
+                </div>
+                <div class="main_content_stage">
+                    <div class="main_content_stage_text">
+                        <a class="main_content_stage_text_first">Stufe 3</a>
+                        <p class="main_content_stage_text_second">In Stufe 3 musst du ungef&auml;hr 6 Kilometer laufen um zum Ziel zu gelangen.</p>
+                    </div>
+                    <div class="main_content_stage_icon">
+                        <a class="main_content_stage_icon_circle" href="" style="background-color: #EEC10C;">3</a>
+                    </div>
+                </div>
+                <div class="main_content_stage">
+                    <div class="main_content_stage_text">
+                        <a class="main_content_stage_text_first">Stufe 4</a>
+                        <p class="main_content_stage_text_second">In Stufe 4 musst du ungef&auml;hr 12 Kilometer laufen um zum Ziel zu gelangen.</p>
+                    </div>
+                    <div class="main_content_stage_icon">
+                        <a class="main_content_stage_icon_circle" href="" style="background-color: #E6630C;">4</a>
+                    </div>
+                </div>
+                <div id="main_content_stage_last">
+                    <div class="main_content_stage_text">
+                        <a class="main_content_stage_text_first">Stufe 5</a>
+                        <p class="main_content_stage_text_second">In Stufe 5 musst du ungef&auml;hr 25 Kilometer laufen um zum Ziel zu gelangen.</p>
+                    </div>
+                    <div class="main_content_stage_icon">
+                        <a class="main_content_stage_icon_circle" href="" style="background-color: #FF0000;">5</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div id="footer_location">
+                <a href="location.html" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_home">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_back">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
+            </div>
+        </footer>
+    </body>
+</html>

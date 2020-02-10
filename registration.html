@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <style type="text/css" media="screen">
+            #main_content {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            #main_content_form {
+                width: 80%;
+                height: 90%;
+            }
+            #form_h1 {
+                font-size: 5rem;
+                font-weight: 700;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                margin-left: 5%;
+            }
+            #form_fieldset {
+                border: 2px solid rgb(150, 150, 150);
+                border-radius: 10px;
+            }
+            .form_label {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-left: 6%;
+            }
+            .form_p {
+                margin: 8px;
+            }
+            .form_input {
+                width: 90%;
+                height: 50px;
+                border: 2px solid rgba(0, 0, 0, 0.6);
+                border-radius: 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding-left: 1%;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+            #form_info {
+                margin-bottom: 5px;
+                margin-top: 0;
+                font-size: 1.7rem;
+                font-weight: 500;
+                margin-left: 6%;
+            }
+            #form_button_submit {
+                height: 50px;
+                width: 91%;
+                border: 0;
+                border-radius: 15px;
+                background-color: rgba(39, 168, 61, 0.9);
+                margin-left: 5%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+            .form_input:focus {
+                outline: none;
+                box-shadow: 0px 0px 5px 2px rgba(39,168,61,0.9);
+            }
+            #form_p_login {
+                margin-left: 5%;
+                font-size: 1.7rem;
+            }
+            #error_message {
+                margin-left: 5%;
+                color: rgb(218, 0, 0);
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: 0;
+                font-size: 2rem;
+            }
+        </style>
+	</head>
+	<body>
+        <header>
+            <div id="header_name">
+                <h3 id="Ub_username">Username</h3>
+                <h1 id="Ub_site">Home</h1>
+            </div>
+            <div id="header_picture">
+                <img src=".\bilder\images_header\profile.png" style="height: 80%; width: 80%;">
+            </div>
+        </header>
+        <main>
+            <div id="main_content">
+                <form  id="main_content_form" action="registration_inc.php" method="post">
+                    <fieldset id="form_fieldset">
+                        <h1 id="form_h1">Registrieren</h1>
+
+                        <p class="form_p">
+                            <label class="form_label">Vorname</label>
+                        </p>
+                        <p class="form_p">
+                            <input class="form_input" type="text" name="firstname" required>
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Nachname</label>
+                        </p>
+                        <p class="form_p">
+                            <input id="inputs" class="form_input" type="text" name="surename" required>
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Nickname</label>
+                        </p>
+                        <p class="form_p">
+                            <input class="form_input" type="text" name="nickname" required>
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Alter</label>
+                        </p>
+                        <p class="form_p">
+                            <input class="form_input" type="number" name="age">
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Email</label>
+                        </p>
+                        <p class="form_p">
+                            <input class="form_input" type="email" name="email" required>
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Passwort</label>
+                        </p>
+                        <p class="form_p">
+                            <input id="pw" class="form_input" type="password" name="password" required>
+                        </p>
+                        <p id="form_info">
+                            * Passwort muss mindestens 6 Zeichen lang sein
+                        </p>
+                        <p class="form_p">
+                            <label class="form_label">Passwort bestätigen</label>
+                        </p>
+                        <p class="form_p">
+                            <input id="pwbe"class="form_input" type="password" name="pwordbest" required>
+                        </p>
+                        <!--Feld für die Ausgabe des Skripts für den Passwortvergleich-->
+                        <p id="error_message">
+
+                        </p>
+                        <!--Skript um die eingegebenen Passwörter zu vergleichen-->
+                        <script>
+                            const error_message = document.getElementById('error_message');
+
+                            //Eventlistener wird hinzugefügt
+                            /*Reagiert auf eine änderung des inputfeldes mit der ID pwbe
+                            und ruft dann die funktion vergleich auf*/
+                            document.querySelector('#pwbe').addEventListener('change', vergleich);
+
+                            function vergleich() {
+                                //Beide Passwörter werden verglichen
+                                if(!(window.document.getElementById("pw").value === window.document.getElementById("pwbe").value)) {
+                                    /*Wenn false herauskommt wird diese Error message unter dem Passwort
+                                    bestätigen input angezeigt*/ 
+                                    error_message.textContent = "Passwörter stimmen nicht überein!";
+                                    //Der Registrierungs Button wird deaktiviert
+                                    document.getElementById('form_button_submit').disabled = true;
+                                } else {
+                                    //wenn true heraus kommmt wird nichts angezeigt
+                                    error_message.textContent = "";
+                                    //Der Registrierungs Button wird aktiviert
+                                    document.getElementById('form_button_submit').disabled = false;
+                                }
+                            }
+                        </script>
+                        <button id="form_button_submit" name="submit" type="submit">Registrieren</button>
+                        <p id="form_p_login">
+                            Bereits ein Konto? Hier <a href="login.html">anmelden</a>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <div id="footer_location">
+                <a href="location.html" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_home">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_back">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
+            </div>
+        </footer>
+    </body>
+</html>

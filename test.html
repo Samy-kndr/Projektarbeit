@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+        <meta charset="UTF-8">
+        <!--OSM dateien-->
+        <link rel="stylesheet" href="/Web/leaflet/leaflet.css" />
+	    <script src="/Web/leaflet/leaflet.js"></script>
+        <!--Css für alles andere(alles außer der Map)-->
+        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <style type="text/css" media="screen">
+            #main_content {
+                width: 100vw;
+            }
+            #main_content {
+                height: calc(100vh - 140px - 2px);
+            }
+            #links {
+                width: 125px;
+                height: 125px;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #kasten1 {
+                width: 100vw;
+                height: 170px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: rgba(45,255,0,1);
+                position: absolute;
+            }
+            #kasten {
+                position: relative;
+                width: 100vw;
+                height: 170px;
+            }
+        </style>
+	</head>
+	<body>
+        <header>
+            <div id="header_name">
+                <h3 id="Ub_username">Username</h3>
+                <h1 id="Ub_site">Home</h1>
+            </div>
+            <div id="header_picture">
+                <img src=".\bilder\images_header\profile.png" style="height: 80%; width: 80%;">
+            </div>
+        </header>
+        <main>
+            <div id="kasten">
+            <div id="main_content">
+                <div id='map' style='height: 100%; width: 100%;'></div>
+                <!-- OSM-Basiskarte einfügen und zentrieren -->
+                <script type='text/javascript'>
+                    var lon = 43.5320369;
+                    var lat = 15.9813014;
+
+                    var Karte = L.map('map').setView([lon, lat], 16);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    'attribution':  'Kartendaten &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Mitwirkende',
+                    'useCache': true
+                    }).addTo(Karte);
+                </script>
+                <script src="./test.js"></script>
+                
+                    <div id="kasten1"
+                        <div id="links"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

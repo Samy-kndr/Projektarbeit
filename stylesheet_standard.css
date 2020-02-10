@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI;
+}
+#Ub_username {
+    font-size: 2.5rem;
+    padding-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+#Ub_site {
+    font-size: 3.5rem;
+    padding-left: 40px;
+    margin: 0;
+}
+header {
+    width: 100vw;
+    height: 140px;
+    border-bottom: 2px solid black;
+    box-shadow: 2px 2px 20px 3px rgba(0,0,0,0.8);
+}
+main {
+    width: 100vw;
+    height: calc(100vh - 140px - 170px - 2px - 2px);
+    display: flex;
+}
+footer {
+    width: 100vw;
+    height: 170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid black;
+    box-shadow: 2px 2px 20px 3px rgba(0,0,0,0.8);
+    background-color: white;
+}
+
+#header_name {
+    width: calc(100vw - 140px - 2px);
+    height: 140px;
+    float: left;
+}
+#header_picture {
+    width: 140px;
+    height: 140px;
+    float: right;
+    border-left: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#main_leftside {
+    width: 9%;
+    height: calc(100vh - 140px - 170px - 2px - 2px);;
+
+}
+#main_rightside {
+    width: 9%;
+    height: calc(100vh - 140px - 170px - 2px - 2px);;
+
+}
+#main_content {
+    width: 82%;
+    height: calc(100vh - 140px - 170px - 2px - 2px);
+}
+#footer_location {
+    width: 125px;
+    height: 125px;
+    border-radius: 25px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#footer_home {
+    width: 125px;
+    height: 125px;
+    border-radius: 25px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#footer_back {
+    width: 125px;
+    height: 125px;
+    border-radius: 25px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer_a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
