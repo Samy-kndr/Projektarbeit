@@ -11,10 +11,12 @@
         <meta charset="UTF-8">
         <!--OSM dateien-->
         <link rel="stylesheet" href="./leaflet/leaflet.css" />
-	    <script src="./leaflet/leaflet.js"></script>
+        <script src="./leaflet/leaflet.js"></script>
+        <script src="Leaflet.EasyButton-master/easy-button.js"></script>
         <!--Css für alles andere(alles außer der Map)-->
         <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="Leaflet.EasyButton-master/easy-button.css" media="screen" type="text/css">
+        
         <style type="text/css" media="screen">
             #main_content {
                 width: 100vw;
@@ -98,26 +100,28 @@
                             'useCache': true
                             }).addTo(Karte);
 
+                            L.easyButton( '<span style="color:blue;text-align:center;">Start</span>', function(){
+                                finlat = position.coords.latitude;
+                                finlon = position.coords.longitude;
+
+                                 var radius = L.circle([finlat, finlon], {
+                                color: 'red',
+                                fillColor: '#f03',
+                                fillOpacity: '0.2',
+                                radius: 1000
+                            }).addTo(Karte);
+                            }).addTo(Karte);
+
                             // Marker wird auf die postion 0,0 (auf der karte) gesetzt
                             const marker = L.marker([0,0]).addTo(Karte);
 
                             // Marker wird auf den neuesten stand gebracht
                             marker.setLatLng([lat,lon]);
 
-                            // Radius wird angezeigt 
-                            var radius = L.circle([lat, lon], {
-                                color: 'red',
-                                fillColor: '#f03',
-                                fillOpacity: '0.2',
-                                radius: 1000
-                            }).addTo(Karte);
-
                             var helloPopup = L.popup().setContent('Hello World!');
 
-                        L.easyButton('fa-globe', function(btn, map){
-                            helloPopup.setLatLng(map.getCenter()).openOn(map);
-                        }).addTo( Karte );
                     }
+
                     
                     function positionerror(error) {
                         /***Der Error Code 1 ist der Code, wenn der Benutzer die Anfrage ablehnt***/
