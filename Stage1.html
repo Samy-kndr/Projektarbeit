@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Problem: 
+        -   Wenn auf dem Handy auf zugriff zulassen geklickt wird und das GPS eingeschaltet
+            wird muss manuell die Seite neu geladen werden 
+                => Der Benutzer soll die seite nicht neu laden müssen -> soll automatisch gehen 
+    -->
+	<head>
+		<title>Home</title>
+        <meta charset="UTF-8">
+        <!--OSM dateien-->
+        <link rel="stylesheet" href="./leaflet/leaflet.css" />
+	    <script src="./leaflet/leaflet.js"></script>
+        <!--Css für alles andere(alles außer der Map)-->
+        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
+        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <style type="text/css" media="screen">
+            #main_content {
+                width: 100vw;
+            }
+            /*CSS für den Container in dem Container "main_content"*/
+            /*Regelt nur die anordnung der schrift und des Buttons sonst nichts*/
+            #main_content_fail {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+            /*CSS für die Schrift die den Bneuzter darauf hinweist, dass er die Standort Abfrage aktivieren würde*/
+            #Stage1_dynamic_p {
+                font-size: 2rem;
+                font-weight: 700;
+                text-align: center;
+                
+            }
+            /*CSS für den Button der Erschein wenn der Benutzer die Standort Anfrage ablehnt*/
+            #button_erlauben {
+                background-color: rgba(39, 168, 61, 0.9);
+                border: 0;
+                border-radius: 200px;
+                height: 60px;
+                width: 400px;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-align: center;
+            }
+        </style>
+	</head>
+	<body>
+        <header>
+            <div id="header_name">
+                <h3 id="Ub_username">Username</h3>
+                <h1 id="Ub_site">Stage 1</h1>
+            </div>
+            <div id="header_picture">
+                <img src=".\bilder\images_header\profile.png" style="height: 80%; width: 80%;">
+            </div>
+        </header>
+        <main>
+            <div id="main_content">
+                <div id='map' style='height: 100%; width: 100%;'></div>
+                <!-- OSM-Basiskarte einfügen und auf die aktuelle Position zentrieren -->
+                <script type='text/javascript'>
+                    /*Die Standort Abfrage das erstemal aufrufen*/
+                    getposition();
+
+                    /*Funktion um die Position einmal zu ermitteln*/
+                    function getposition() {
+                        /***Positionsermittlung funktioniert***/
+                        if (navigator.geolocation) {
+                            //wenn die Abfrage erfolgreich ist wird die Funktion "positionsuccess" aufgerufen
+                            //wenn die Abfrage fehlschlägt wird die Funktion "positionerror" aufgerufen
+                            navigator.geolocation.getCurrentPosition(positionsuccess, positionerror);
+                        /***Positionsermittlung funktioniert nicht***/
+                        } else {
+                            //Im div-Container mit der id "main_content" wird der unten stehende Text ausgegeben
+                            document.getElementById("main_content").innerHTML = '<p id=\"Stage1_dynamic_p\">Ihr Browser unterstützt keine Geolocation!</p>';
+                        }
+                    }
+                    //Die Varibalen anlegen und Standardwerte zuweisen
+                    var lat = 0;
+                    var lon = 0;
+                    var zoom = 11;
+
+                    function positionsuccess(position) {
+                        //Den Variablen werden längen und breiten Grad zugewiesen
+                        lat = position.coords.latitude;
+                        lon = position.coords.longitude;
+
+                        //Der Variablen Karte wird das Objekt map zugewiesen
+                        var Karte = L.map('map').setView([lat, lon], zoom);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            'attribution':  'Kartendaten &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Mitwirkende',
+                            'useCache': true
+                            }).addTo(Karte);
+
+                            // Marker wird auf die postion 0,0 (auf der karte) gesetzt
+                            const marker = L.marker([0,0]).addTo(Karte);
+
+                            // Marker wird auf den neuesten stand gebracht
+                            marker.setLatLng([lat,lon]);
+
+                            // Radius wird angezeigt 
+                            var radius = L.circle([lat, lon], {
+                                color: 'red',
+                                fillColor: '#f03',
+                                fillOpacity: '0.2',
+                                radius: 1000
+                            }).addTo(Karte);
+
+                            var helloPopup = L.popup().setContent('Hello World!');
+
+                        L.easyButton('fa-globe', function(btn, map){
+                            helloPopup.setLatLng(map.getCenter()).openOn(map);
+                        }).addTo( Karte );
+                    }
+                    
+                    function positionerror(error) {
+                        /***Der Error Code 1 ist der Code, wenn der Benutzer die Anfrage ablehnt***/
+                        if(error.code == 1)
+                        {
+                            //Die Funktion enable wird aufgerufen
+                            enable();
+                            //Zur Kontrolle ausgabe in der Konsole
+                            console.log("Benutzer lehnt Standort Abfrage ab!");
+                        /***Bei allen anderen Error Codes***/
+                        } else {
+                            //Es wird "Error: " ausgegeben und der jeweilige Errorcode
+                            document.getElementById("main_content").innerHTML = "<p id=\"Stage1_dynamic_p\">Error: " + 
+                            error.message + "</p>"
+                        }
+                    };
+                    //Funktion bei Error Code 1 aufgerufen wird
+                    function enable() {
+                        //Gibt den Text und den Button aus 
+                        //Werden oben noch mit CSS gestaltet
+                        document.getElementById("main_content").innerHTML = "<div id=\"main_content_fail\"><p id=\"Stage1_dynamic_p\">Sie m&uuml;ssen " + 
+                            "die Standord Abfrage zulassen, um dieses Training verwenden zu k&ouml;nnen!</p>" + 
+                            "<button id=\"button_erlauben\" onclick=\"getposition()\">Zugriff Erlauben</button></div>";
+                    }
+                </script>
+            </div>
+        </main>
+        <footer>
+            <div id="footer_location">
+                <a href="location.html" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_home">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
+            </div>
+            <div id="footer_back">
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
+            </div>
+        </footer>
+    </body>
+</html>

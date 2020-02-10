@@ -1,0 +1,22 @@
+#main_content {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.main_main_content_buttons {
+    background-color: white;
+    border: 0px;
+    height: 400px;
+    width: 400px;
+    border-radius: 40px;
+}
+.a_margin {
+    margin: 5%;
+}
+@media (max-width: 1220px) {
+    .main_main_content_buttons {
+        height: 300px;
+        width: 300px;
+    }
+}
