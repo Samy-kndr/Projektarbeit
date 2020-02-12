@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
     // Error handlers
     // Existiert der Benutzername?
-    $sql = "SELECT * FROM user_data WHERE user_benutzername = '$nickname'";
+    $sql = "SELECT user_acc_passwort FROM user_acc WHERE user_benutzername = '$nickname'";
     
     $result = mysqli_query($connection, $sql);
     
