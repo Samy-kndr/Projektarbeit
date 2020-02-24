@@ -126,18 +126,45 @@
                             'attribution':  'Kartendaten &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Mitwirkende',
                             'useCache': true
                             }).addTo(Karte);
-
+                            
+                            // Start button erstellt roten Radius
                             L.easyButton( '<span style="color:blue;text-align:center;">Start</span>', function(){
                                 finlat = position.coords.latitude;
                                 finlon = position.coords.longitude;
 
-                                 var radius = L.circle([finlat, finlon], {
-                                color: 'red',
-                                fillColor: '#f03',
-                                fillOpacity: '0.2',
-                                radius: 1000
+                                redradius(finlon, finlat, "start");
+
                             }).addTo(Karte);
+
+                            // Stop button entfernt roten Radius
+                            L.easyButton( '<span style="color:blue;text-align:center;">Stop</span>', function(){
+                                finlat = position.coords.latitude;
+                                finlon = position.coords.longitude;
+
+                                redradius(finlon, finlat, "stop");
+
                             }).addTo(Karte);
+
+                            // funktion für die button  
+                            function redradius(finlon, finlat, auswahl) {
+                                
+                                if(auswahl == "start") {
+                                    var radius = L.circle([finlat, finlon], {
+                                    color: 'red',
+                                    fillColor: '#f03',
+                                    fillOpacity: '0.2',
+                                    radius: 1000
+                                    }).addTo(Karte);
+                                    
+                                    console.log(auswahl);
+                                    console.log("Start");
+                                } else if (auswahl == "stop") {
+                                    // TODO
+                                    radius.setStyle(opacity);
+                                    console.log("Stop")
+                                }
+
+                            }                          
 
                             // Marker wird auf die postion 0,0 (auf der karte) gesetzt
                             const marker = L.marker([0,0]).addTo(Karte);
