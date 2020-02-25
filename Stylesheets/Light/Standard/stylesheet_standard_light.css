@@ -65,7 +65,7 @@ footer {
 
 }
 #main_content {
-    width: 82%;
+    width: 100%;
     height: calc(100vh - 140px - 170px - 2px - 2px);
     display: flex;
     align-content: flex-start;

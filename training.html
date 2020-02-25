@@ -3,14 +3,39 @@
 	<head>
 		<title>Training</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_training.css" media="screen" type="text/css">
+        <link rel="stylesheet" id="stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Light/Custom/stylesheet_training_light.css" title="light">
+        <link rel="stylesheet" id="stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Light/Standard/stylesheet_standard_light.css" title="light">
+        <link rel="alternate stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Dark/Custom/stylesheet_training_dark.css" title="dark">
+        <link rel="alternate stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Dark/Standard/stylesheet_standard_dark.css" title="dark">
+        <script>
+            (function () {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var currentSheetSTD = document.getElementById("stylesheet_standard"),
+                    currentSheetSITE = document.getElementById("stylesheet_site");
+
+                    console.log(localStorage.getItem("theme"));
+                    if (localStorage.getItem("theme") == "dark") {
+                        
+                        currentSheetSITE.href = "./Stylesheets/Dark/Custom/stylesheet_training_dark.css";
+                        currentSheetSTD.href = "./Stylesheets/Dark/Standard/stylesheet_standard_dark.css";
+                    } else {
+                        currentSheetSITE.href = "./Stylesheets/Light/Custom/stylesheet_training_light.css";
+                        currentSheetSTD.href = "./Stylesheets/Light/Standard/stylesheet_standard_light.css";
+                    }
+                });
+            }());
+        </script>
+        <!--Manifest file für die Installation-->
         <link rel="manifest" href="manifest.json">
-        <!--Registrierungsscript des Service-Workers-->
-        <script src="reg.js"></script>
         <style type="text/css" media="screen">
             #main_content {
-                background-color: rgba(59, 209, 79, 0.5);
+                background: linear-gradient(#86C232, #4D6D25);
+            }
+            #main_leftside {
+                background-color: #6B6E70;
+            }
+            #main_rightside {
+                background-color: #6B6E70;
             }
         </style>
 	</head>

@@ -3,8 +3,30 @@
 	<head>
 		<title>Home</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_all.css" media="screen" type="text/css">
+        <link rel="stylesheet" id="stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Light/Custom/stylesheet_notaviable_light.css" title="light">
+        <link rel="stylesheet" id="stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Light/Standard/stylesheet_standard_light.css" title="light">
+        <link rel="alternate stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Dark/Custom/stylesheet_notaviable_dark.css" title="dark">
+        <link rel="alternate stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Dark/Standard/stylesheet_standard_dark.css" title="dark">
+        <script>
+            (function () {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var currentSheetSTD = document.getElementById("stylesheet_standard"),
+                    currentSheetSITE = document.getElementById("stylesheet_site");
+
+                    console.log(localStorage.getItem("theme"));
+                    if (localStorage.getItem("theme") == "dark") {
+                        
+                        currentSheetSITE.href = "./Stylesheets/Dark/Custom/stylesheet_notaviable_dark.css";
+                        currentSheetSTD.href = "./Stylesheets/Dark/Standard/stylesheet_standard_dark.css";
+                    } else {
+                        currentSheetSITE.href = "./Stylesheets/Light/Custom/stylesheet_notaviable_light.css";
+                        currentSheetSTD.href = "./Stylesheets/Light/Standard/stylesheet_standard_light.css";
+                    }
+                });
+            }());
+        </script>
+        <!--Manifest file für die Installation-->
+        <link rel="manifest" href="manifest.json">
         <style type="text/css" media="screen">
             #main_main_content_mistake {
                 padding-top: 60%; 

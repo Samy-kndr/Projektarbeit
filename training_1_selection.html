@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <!--Farben der Buttons auslagern-->
 		<title>Home</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_training_1_selection.css" media="screen" type="text/css">
+        <link rel="stylesheet" id="stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Light/Custom/stylesheet_training_1_selection_light.css" title="light">
+        <link rel="stylesheet" id="stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Light/Standard/stylesheet_standard_light.css" title="light">
+        <link rel="alternate stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Dark/Custom/stylesheet_training_1_selection_dark.css" title="dark">
+        <link rel="alternate stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Dark/Standard/stylesheet_standard_dark.css" title="dark">
+        <script>
+            (function () {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var currentSheetSTD = document.getElementById("stylesheet_standard"),
+                    currentSheetSITE = document.getElementById("stylesheet_site");
+
+                    console.log(localStorage.getItem("theme"));
+                    if (localStorage.getItem("theme") == "dark") {
+                        
+                        currentSheetSITE.href = "./Stylesheets/Dark/Custom/stylesheet_training_1_selection_dark.css";
+                        currentSheetSTD.href = "./Stylesheets/Dark/Standard/stylesheet_standard_dark.css";
+                    } else {
+                        currentSheetSITE.href = "./Stylesheets/Light/Custom/stylesheet_training_1_selection_light.css";
+                        currentSheetSTD.href = "./Stylesheets/Light/Standard/stylesheet_standard_light.css";
+                    }
+                });
+            }());
+        </script>
+        <!--Manifest file für die Installation-->
+        <link rel="manifest" href="manifest.json">
         <style type="text/css" media="screen">
             
         </style>
@@ -30,7 +53,7 @@
                         <p class="main_content_stage_text_second">In Stufe 1 musst du ungef&auml;hr 1 Kilometer laufen um zum Ziel zu gelangen</p>
                     </div>
                     <div class="main_content_stage_icon">
-                        <a class="main_content_stage_icon_circle" href="Stage1.html" style="background-color: #77E270;">1</a>
+                        <a id="main_content_stage_icon_circle_diff1" href="Stage1.html">1</a>
                     </div>
                 </div>
                 <div class="main_content_stage">
@@ -39,7 +62,7 @@
                         <p class="main_content_stage_text_second">In Stufe 2 musst du ungef&auml;hr 3 Kilometer laufen um zum Ziel zu gelangen.</p>
                     </div>
                     <div class="main_content_stage_icon">
-                        <a class="main_content_stage_icon_circle" href="" style="background-color: #C8E353;">2</a>
+                        <a id="main_content_stage_icon_circle_diff2" href="">2</a>
                     </div>
                 </div>
                 <div class="main_content_stage">
@@ -48,7 +71,7 @@
                         <p class="main_content_stage_text_second">In Stufe 3 musst du ungef&auml;hr 6 Kilometer laufen um zum Ziel zu gelangen.</p>
                     </div>
                     <div class="main_content_stage_icon">
-                        <a class="main_content_stage_icon_circle" href="" style="background-color: #EEC10C;">3</a>
+                        <a id="main_content_stage_icon_circle_diff3" href="" >3</a>
                     </div>
                 </div>
                 <div class="main_content_stage">
@@ -57,7 +80,7 @@
                         <p class="main_content_stage_text_second">In Stufe 4 musst du ungef&auml;hr 12 Kilometer laufen um zum Ziel zu gelangen.</p>
                     </div>
                     <div class="main_content_stage_icon">
-                        <a class="main_content_stage_icon_circle" href="" style="background-color: #E6630C;">4</a>
+                        <a id="main_content_stage_icon_circle_diff4" href="">4</a>
                     </div>
                 </div>
                 <div id="main_content_stage_last">
@@ -66,7 +89,7 @@
                         <p class="main_content_stage_text_second">In Stufe 5 musst du ungef&auml;hr 25 Kilometer laufen um zum Ziel zu gelangen.</p>
                     </div>
                     <div class="main_content_stage_icon">
-                        <a class="main_content_stage_icon_circle" href="" style="background-color: #FF0000;">5</a>
+                        <a id="main_content_stage_icon_circle_diff5" href="">5</a>
                     </div>
                 </div>
             </div>
