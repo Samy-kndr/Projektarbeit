@@ -79,7 +79,7 @@
                 //Fehlermeldung in reg_error schreiben 
                 $reg_error = "Fehler beim automatischen anmelden!. "
                     . "($con->errno - $con->error)";
-                
+
                 //Benutzer und die fehlermeldung auf die loginseite weiterleiten
                 header("Location: login.php?reg_error=" . $reg_error);
                 // Verbindung schließen
@@ -90,9 +90,9 @@
                 //Benutzer anmelden (Session variablen anlegen und die abgerufenen Daten in diese schreiben)
                 $_SESSION['session_user_id'] = $login_erg['user_id'];;
                 $_SESSION['session_user_username'] = $login_erg['user_username'];
-                
+
                 //User auf die Startseite weiterleiten
-                header("Location: index.html");
+                header("Location: index.php");
                 // Verbindung schließen
                 $con->close();
                 exit();
