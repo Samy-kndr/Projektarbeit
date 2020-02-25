@@ -92,7 +92,7 @@
                 $_SESSION['session_user_username'] = $login_erg['user_username'];
                 
                 //User auf die Startseite weiterleiten
-                //header("Location: index.html");
+                header("Location: index.html");
                 // Verbindung schließen
                 $con->close();
                 exit();

@@ -40,7 +40,7 @@
                 <h1 id="Ub_site">Home</h1>
             </div>
             <div id="header_picture">
-                <a href="manu.html" class="footer_a"><img src=".\bilder\images_header\profile.png" style= "height: 80%; width: 80%;"></a>
+                <a href="manu.php" class="footer_a"><img src=".\bilder\images_header\profile.png" style= "height: 80%; width: 80%;"></a>
             </div>
         </header>
         <main>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div id="main_content_left">
-                    <a id="main_content_left_1_link" href="training.html">
+                    <a id="main_content_left_1_link" href="training.php">
                         <div id="main_content_left_1">
                             <div id="main_content_left_1_text">
                                 <h1 id="main_content_left_1_text_h1">Training</h1>
@@ -78,13 +78,13 @@
         </main>
         <footer>
             <div id="footer_location">
-                <a href="location.html" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
+                <a href="location.php" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
             </div>
             <div id="footer_home">
-                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
+                <a href="index.php" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
             </div>
             <div id="footer_back">
-                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
+                <a href="index.php" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
             </div>
         </footer>
     </body>
