@@ -220,7 +220,7 @@
                         <button id="form_button_submit" name="submit" type="submit">Registrieren</button>
 
                         <p id="form_p_login">
-                            Bereits ein Konto? Hier <a href="login.php">anmelden</a>
+                            Bereits ein Konto? Hier <a href="login.html">anmelden</a>
                         </p>
                         <script>
                             document.getElementById("form_button_submit").addEventListener("click", function(){
@@ -236,13 +236,13 @@
         </main>
         <footer>
             <div id="footer_location">
-                <a href="location.php" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
+                <a href="location.html" class="footer_a"><img src=".\bilder\images_footer\location.png" style="height: 80%; width: 80%;"></a>
             </div>
             <div id="footer_home">
-                <a href="index.php" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\home.png" style="height: 80%; width: 80%;"></a>
             </div>
             <div id="footer_back">
-                <a href="index.php" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
+                <a href="index.html" class="footer_a"><img src=".\bilder\images_footer\back.png" style="height: 80%; width: 80%;"></a>
             </div>
         </footer>
     </body>
