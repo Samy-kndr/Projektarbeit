@@ -67,7 +67,40 @@
             #474B4F Dunkles Grau
             #6B6E70 Helles Grau
             */
-
+            .main_content_settings {
+                width: 100%;
+                height: 200px;
+                display: flex;
+                border-bottom: 4px solid #35383b;
+            }
+            /*.main_content_icon {
+                height: 100%;
+                width: 200px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                float: left;
+            }
+            .main_content_txt {
+                width: calc(100% - 200px);
+                height: 100%;
+                float: right;
+                font-weight: 700;
+            }
+            .main_content_txt_h1 {
+                font-size: 3rem;
+                margin-top: 3%;
+                margin-left: 2%;
+                margin-bottom: 0;
+                margin-right: 0;
+            }
+            .main_content_txt_p {
+                font-size: 2rem;
+                margin-top: 1%;
+                margin-left: 2%;
+                margin-bottom: 0;
+                margin-right: 0;
+            }*/
         </style>
 	</head>
 	<body>
@@ -82,8 +115,30 @@
         </header>
         <main>
             <div id="main_content">
+                <div class="main_content_settings">
+
+                </div>
+                <div class="main_content_settings">
+                    
+                </div>
                 <script>
-                    if(localStorage.getItem("theme") == "dark") {
+                    //Button für den Darkmode
+                    if(localStorage.getItem("settings_theme") == "dark") {
+                        document.getElementById("main_content").innerHTML = 
+                            "<label class=\"switcher\">" 
+                            + "<input type=\"checkbox\" id=\"darkmode\" checked>" 
+                            + "<span class=\"slider round\"></span>" 
+                            + "</label>";
+                    } else {
+                        document.getElementById("main_content").innerHTML = 
+                            "<label class=\"switcher\">" 
+                            + "<input type=\"checkbox\" id=\"darkmode\">" 
+                            + "<span class=\"slider round\"></span>" 
+                            + "</label>";
+                    }
+
+                    //Button für Einstellungen Speichern
+                    if(localStorage.getItem("settings_theme") == "dark") {
                         document.getElementById("main_content").innerHTML = 
                             "<label class=\"switcher\">" 
                             + "<input type=\"checkbox\" id=\"darkmode\" checked>" 
