@@ -8,7 +8,7 @@
     if($errerNr != 0)
     {
         $data = "Verbindung fehlgeschlagen" . mysqli_connect_error() . "";
-        
+    
         debug_to_console($data);
     } else {
         $data = "Erfolgreich verbunden";
@@ -18,7 +18,7 @@
     function debug_to_console($data) {
 
         $output = "<script>console.log(\"$data\");</script>";
-            
+ 
 		echo $output;
 	}
 ?>
