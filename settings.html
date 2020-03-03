@@ -82,6 +82,7 @@
         </header>
         <main>
             <div id="main_content">
+<<<<<<< HEAD
                 <div class="main_content_">
 
                 </div>
@@ -100,6 +101,23 @@
                                 + "</label>";
                         }
                     </script>
+=======
+                <script>
+                    if(localStorage.getItem("theme") == "dark") {
+                        document.getElementById("main_content").innerHTML = 
+                            "<label class=\"switcher\">" 
+                            + "<input type=\"checkbox\" id=\"darkmode\" checked>" 
+                            + "<span class=\"slider round\"></span>" 
+                            + "</label>";
+                    } else {
+                        document.getElementById("main_content").innerHTML = 
+                            "<label class=\"switcher\">" 
+                            + "<input type=\"checkbox\" id=\"darkmode\">" 
+                            + "<span class=\"slider round\"></span>" 
+                            + "</label>";
+                    }
+                </script>
+>>>>>>> bearbeiten
             </div>
         </main>
         <footer>

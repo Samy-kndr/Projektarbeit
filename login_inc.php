@@ -1,13 +1,12 @@
 <?php
 /*Sitzung starten damit der Nutzer auch eingeloggt bleibt*/
 session_start();
-
 if (isset($_POST['submit'])) {
 
     include 'db.php';
 
-    $nickname = mysqli_real_escape_string($connection, $_POST['benutzername']);
-    $password = mysqli_real_escape_string($connection, $_POST['passwort']);
+    $nickname = mysqli_real_escape_string($con, $_POST['benutzername']);
+    $password = mysqli_real_escape_string($con, $_POST['passwort']);
 
     // Error handlers
     // Existiert der Benutzername?
@@ -17,10 +16,10 @@ if (isset($_POST['submit'])) {
     
     // mysqli_num_rows gibt die Anzahl an, wie oft die Bedingung von $sql erfüllt wird
     $resultCheck = mysqli_num_rows($result);
-    
+
     if ($resultCheck < 1) {
         // ?login=user gibt die Information an die index.php weiter
-        header("Location: login.php?login=user");
+        header("Location: login.html?login=user");
         exit();
     } else {
         // Ist das Passwort korrekt?
@@ -31,7 +30,7 @@ if (isset($_POST['submit'])) {
             $hashedPassword = password_verify($password, $row['user_passwort']);
             
             if ($hashedPassword == false) {
-                header("Location: login.php?login=password");
+                header("Location: login.html?login=password");
                 exit();
               // elseif fängt unvorhergesehene Fehler ab
             } elseif($hashedPassword == true){

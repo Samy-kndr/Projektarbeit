@@ -3,9 +3,28 @@
 	<head>
 		<title>Home</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylesheet_standard.css" media="screen" type="text/css">
-        <link rel="stylesheet" href="stylesheet_index.css" media="screen" type="text/css">
-        <!--***Funktioniert noch nicht<link rel="stylesheet" href="stylesheet_index.css" media="screen" type="text/css">-->
+        <link rel="stylesheet" id="stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Light/Custom/stylesheet_index_light.css" title="light">
+        <link rel="stylesheet" id="stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Light/Standard/stylesheet_standard_light.css" title="light">
+        <link rel="alternate stylesheet_site" media="screen" type="text/css" href="./Stylesheets/Dark/Custom/stylesheet_index_dark.css" title="dark">
+        <link rel="alternate stylesheet_standard" media="screen" type="text/css" href="./Stylesheets/Dark/Standard/stylesheet_standard_dark.css" title="dark">
+        <script>
+            (function () {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var currentSheetSTD = document.getElementById("stylesheet_standard"),
+                    currentSheetSITE = document.getElementById("stylesheet_site");
+
+                    console.log(localStorage.getItem("theme"));
+                    if (localStorage.getItem("theme") == "dark") {
+                        
+                        currentSheetSITE.href = "./Stylesheets/Dark/Custom/stylesheet_index_dark.css";
+                        currentSheetSTD.href = "./Stylesheets/Dark/Standard/stylesheet_standard_dark.css";
+                    } else {
+                        currentSheetSITE.href = "./Stylesheets/Light/Custom/stylesheet_index_light.css";
+                        currentSheetSTD.href = "./Stylesheets/Light/Standard/stylesheet_standard_light.css";
+                    }
+                });
+            }());
+        </script>
         <!--Manifest file für die Installation-->
         <link rel="manifest" href="manifest.json">
         <!--Registrierungsscript des Service-Workers-->
@@ -21,7 +40,7 @@
                 <h1 id="Ub_site">Home</h1>
             </div>
             <div id="header_picture">
-                <a href="registration.html" class="footer_a"><img src=".\bilder\images_header\profile.png" style= "height: 80%; width: 80%;"></a>
+                <a href="manu.html" class="footer_a"><img src=".\bilder\images_header\profile.png" style= "height: 80%; width: 80%;"></a>
             </div>
         </header>
         <main>

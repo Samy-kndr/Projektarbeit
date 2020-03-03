@@ -1,6 +1,6 @@
 <?php
     //Verbindung zur Datenbank herstellen
-    @$db = new mysqli('localhost', 'root', '', 'proarb');
+    $con = new mysqli('localhost', 'root', '', 'projektarbeit');
     
     //Fehlerbehandlung, falls beim Verbinden ein Fehler auftritt
     $errerNr = mysqli_connect_errno();
